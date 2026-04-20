@@ -12,6 +12,18 @@ def test_mean_lista_simple():
 
 
 # --- TU TURNO ---
+@pytest.mark.parametrize("lista, esperado", [
+    ([8], 8.0),
+    ([-5, -10, -15], -10),
+    ([1.5, 2.5, 5.0], 3.0)
+])
+
+def test_mean_parametrize(lista, esperado):
+    assert mean(lista) == esperado
+
+def test_mean_lista_vacia():
+    with pytest.raises(ValueError):
+        mean([])
 # Agregá tests para los siguientes casos:
 #   - Lista con un solo elemento (el resultado debe ser ese mismo elemento)
 #   - Lista con números negativos

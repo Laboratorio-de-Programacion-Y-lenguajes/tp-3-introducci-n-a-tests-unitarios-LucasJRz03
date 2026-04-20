@@ -12,6 +12,15 @@ def test_add_suma_positivos():
 
 
 # --- TU TURNO ---
+@pytest.mark.parametrize("a,b,expected",[
+    (-2, -6, -8),
+    (10, -5, 5),
+    (8, 0, 8),
+    (5.5, 1.5, 7.0),
+])
+
+def test_add_parametrizado(a, b, expected):
+    assert add(a,b) == expected
 # Agregá tests para los siguientes casos:
 #   - Sumar dos números negativos
 #   - Sumar un número positivo y uno negativo
