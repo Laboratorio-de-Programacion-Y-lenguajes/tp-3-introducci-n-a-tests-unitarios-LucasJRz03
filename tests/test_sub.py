@@ -12,6 +12,15 @@ def test_sub_resta_positivos():
 
 
 # --- TU TURNO ---
+@pytest.mark.parametrize("a, b, esperado", [
+    (3, 8, -5),
+    (5, 0, 5),
+    (-3, -5, 2),
+    (3.5, 2.5, 1),
+])
+
+def test_sub_parametrizado(a,b,esperado):
+    assert sub(a,b) == esperado
 # Agregá tests para los siguientes casos:
 #   - Restar un número mayor al primero (resultado negativo)
 #   - Restar cero
