@@ -12,6 +12,16 @@ def test_mul_positivos():
 
 
 # --- TU TURNO ---
+@pytest.mark.parametrize("a, b, esperado", [
+    (4, 0, 0),
+    (-5,-7,35),
+    (5, -8, -40),
+    (4, 1, 4),
+    (6, 2.5, 15),
+])
+
+def test_mul_parametrize(a, b, esperado):
+    assert mul(a,b) == esperado
 # Agregá tests para los siguientes casos:
 #   - Multiplicar por cero
 #   - Multiplicar dos números negativos (resultado positivo)
