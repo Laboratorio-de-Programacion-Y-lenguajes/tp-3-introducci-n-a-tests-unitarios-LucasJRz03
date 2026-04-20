@@ -12,6 +12,12 @@ def test_sqrt_cuadrado_perfecto():
 
 
 # --- TU TURNO ---
+@pytest.mark.parametrize("x, esperado", [
+   (0, 0.0),
+   (2.25, 1.5),
+])
+def test_sqrt_parametrize(x, esperado):
+    assert sqrt(x) == esperado
 # Agregá tests para los siguientes casos:
 #   - Raíz de 0 (resultado: 0.0)
 #   - Raíz de un número que no es cuadrado perfecto (resultado decimal)
@@ -19,6 +25,9 @@ def test_sqrt_cuadrado_perfecto():
 #
 # Pista: para testear excepciones usá pytest.raises:
 #
+def test_sqrt_negativo(): 
+    with pytest.raises(ValueError):
+        sqrt(-4)
 # def test_sqrt_negativo():
 #     with pytest.raises(ValueError):
 #         sqrt(-4)
